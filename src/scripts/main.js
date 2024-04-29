@@ -10,7 +10,7 @@ $(document).ready(function() {
     let score = 0;
     let highscore = localStorage.getItem('highscore') || 0;
 
-    // Função para criar a grade
+    // criar a grade
     function createGrid() {
         for (let i = 0; i < gridSize; i++) {
             for (let j = 0; j < gridSize; j++) {
@@ -21,7 +21,7 @@ $(document).ready(function() {
         generateFood(); 
     }
 
-    // Função para iniciar o jogo
+    // iniciar o jogo
     function startGame() {
         if (!gameRunning) {
             interval = setInterval(moveSnake, speed);
@@ -29,13 +29,13 @@ $(document).ready(function() {
         }
     }
 
-    // Função para parar o jogo
+    // parar o jogo
     function stopGame() {
         clearInterval(interval);
         gameRunning = false;
     }
 
-    // Função para reiniciar o jogo
+    // reiniciar o jogo
     function restartGame() {
         snake = [{ x: 3, y: 10 }, { x: 2, y: 10 }, { x: 1, y: 10 }];
         direction = 'right';
@@ -43,17 +43,17 @@ $(document).ready(function() {
         speed = 150;
         stopGame();
         if (score > highscore) {
-            highscore = score; // Atualiza o high score se o score atual for maior
+            highscore = score; 
             $('#highscore-container').text(`High Score: ${highscore}`);
             localStorage.setItem('snakeHighscore', highscore); // Salva o high score no armazenamento local
         }
         score = 0; // Zera o score ao reiniciar o jogo
-        $('#score-container').text(`Score: ${score}`); // Atualiza a exibição do score
+        $('#score-container').text(`Score: ${score}`); 
         $('#game-over').addClass('hidden'); // Exibe o elemento de "Game Over"
         startGame();
     }
 
-    // Função para mover a cobra
+    // mover a cobra
     function moveSnake() {
         let head = snake[0];
         let newHead;
@@ -73,8 +73,8 @@ $(document).ready(function() {
                 localStorage.setItem('highscore', highscore);
                 updateScore();
             }
-            $('#game-over').removeClass('hidden'); // Exibe o elemento de "Game Over"
-            $('#game-over-score').text(`Score: ${score}`); // exibe a pontuação do último jogo
+            $('#game-over').removeClass('hidden'); 
+            $('#game-over-score').text(`Score: ${score}`); 
 
             return;
         }
@@ -90,7 +90,7 @@ $(document).ready(function() {
         updateGrid();
     }
 
-    // Função para verificar colisão
+    // verificar colisão
     function checkCollision(head) {
         return (
             head.x < 0 ||
@@ -101,7 +101,7 @@ $(document).ready(function() {
         );
     }
 
-    // Função para atualizar a grade
+    // atualizar a grade
     function updateGrid() {
         const cells = $('.cell');
         cells.removeClass('alive').removeClass('food');
@@ -113,7 +113,7 @@ $(document).ready(function() {
         cells.eq(foodIndex).addClass('food');
     }
 
-    // Função para gerar comida
+    // gerar comida
     function generateFood() {
         let x, y;
         do {
@@ -124,7 +124,7 @@ $(document).ready(function() {
         food.y = y;
     }
 
-    // Função para atualizar a pontuação
+    // atualizar a pontuação
     function updateScore() {
         $('#score-container').text(`Score: ${score}`);
         if (score > highscore) {
@@ -160,7 +160,7 @@ $(document).ready(function() {
     $('#restart-button').click(restartGame);
 
 
-    // Cria a grade ao carregar a página
+
     createGrid();
     updateScore(); // Atualiza a pontuação inicial
 });
