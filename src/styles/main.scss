@@ -14,6 +14,15 @@ body {
     scroll-snap-type: y mandatory;
 }
 
+/* Estilos para o container */
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #0D141A;
+    padding: 20px;
+    border-radius: 8px;
+}
+
 .navbar {
     background-color: transparent;
     backdrop-filter: blur(12px);
@@ -48,14 +57,7 @@ body {
 }
 
 
-/* Estilos para o container */
-.container {
-    display: flex;
-    flex-direction: column;
-    background-color: #0D141A;
-    padding: 20px;
-    border-radius: 8px;
-}
+
 
 /* Estilos para o hero */
 .banner {
