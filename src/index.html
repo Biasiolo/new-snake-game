@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="New Snake Game - Jogo clássico da cobra">
+    <meta name="keywords" content="snake, jogo, jogo computador, jogo online, cobra, clássico, divertido, jogo da cobra, jogo da cobrinha, jogo do Nokia, Snake game, jogo snake">
+    <meta name="author" content="Biasiolo">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Medula+One&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/main.scss">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./images/cobra.png">
+
+    <!-- Robots.txt -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="New Snake Game">
+    <meta property="og:description" content="Jogo clássico da cobra">
+    <meta property="og:image" content="./images/cobra.png">
+    <meta property="og:url" content="URL_DO_SEU_SITE">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="New Snake Game">
+    <meta name="twitter:description" content="Jogo clássico da cobra">
+    <meta name="twitter:image" content="./images/cobra.png">
+
+    <title>New Snake Game</title>
+</head>
+
+
+<body>
+    <!-- Navbar -->
+    <nav id="home" class="navbar navbar-expand-lg navbar-light px-5 mx-4">
+        <div class="container-fluid">
+            <a class="navbar-brand mr-auto" href="#">New Snake Game</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link show active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Jogar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero text-light py-4">
+        <div class="container banner">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-lg-6">
+                        <div class="column texto d-flex flex-column justify-content-center align-items-center p-0">
+                            <h1 class="titulo m-0">NEW SNAKE GAME</h1>
+                            <p class="lead mb-5 text-center">O jogo clássico está de volta!</p>
+                            <p class="fs-5 text-center">Desafie suas habilidades em busca de um novo recorde</p>
+                            <a href="#inicio" id="start-button" class="btn btn-danger m-0">Jogue Agora!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <main class="container">
+        <!-- Instruções do Jogo -->
+        <div class="instrucoes text-center">
+            <h2 class="mb-3">INSTRUÇÕES DO JOGO</h2>
+            <p>Guie a cobra através do campo movendo-a com as setas do teclado.<br>
+                Tente capturar as maçãs para aumentar sua pontuação, mas evite colidir com as bordas ou com a
+                própria cauda!</p>
+            <ul>
+                <li><i class="bi bi-arrows-move"></i> Use as setas para mover a cobra</li>
+                <li><i class="bi bi-shift"></i> Shift: Pressione para iniciar ou pausar o jogo</li>
+            </ul>
+        </div>
+        <div id="inicio">
+
+        </div>
+        <button id="restart-button" class="btn btn-dark mt-1">Restart</button>
+
+        <div id="grid-container" class="mt-2">
+            <div id="game-over" class="hidden">
+                <img src="./images/game-over.gif" alt="Game Over" />
+                <div id="game-over-score" class="mt-2"></div>
+                <div id="game-over-hscore"></div>
+            </div>
+        </div>
+
+
+        <div class="placar mt-1">
+            <div id="score-container">Score: <span id="score">0</span></div>
+            <div id="highscore-container">High Score: <span id="highscore">0</span></div>
+        </div>
+
+
+    </main>
+
+    <!-- Ad Section -->
+    <section class="ad m-3">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="titulo">Veja Também</h2>
+                    <div class="ad-content">
+                        <p>Confira o melhor site de busca para karaokê, o Best Karaoke! Com resultados otimizados e uma
+                            interface fácil de usar, você pode cantar suas músicas favoritas quando quiser.</p>
+                        <a href="https://best-karaoke.vercel.app/" class="btn btn-danger" target="_blank">Acesse</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <a href="https://best-karaoke.vercel.app/" target="_blank"><img src="./images/header-response.jpg"
+                            class="img-fluid rounded" alt="Best Karaoke"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <div class="container">
+        <div class="footer">
+            <div class="row">
+                <a href="#home" class="back-to-top text-center">↑ Voltar ao topo ↑</a>
+                <div class="col-md-12">
+
+                    <h2 class="text-center footer__title">CONTATOS</h2>
+                    <ul class="footer__social-links">
+                        <li>
+                            <a href="https://www.linkedin.com/in/rafael-biasiolo/" target="_blank">
+                                <img src="./images/linkedin.svg" alt="logo linkedin">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Biasiolo" target="_blank">
+                                <img src="./images/github.svg" alt="logo github">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:biasiolorafael@gmail.com" target="_blank">
+                                <img src="./images/mail.svg" alt="logo mail">
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="footer__copy mb-0">© Biasiolo - 2024 Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./scripts/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
