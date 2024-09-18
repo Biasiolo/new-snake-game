@@ -130,10 +130,7 @@
             <p>Guie a cobra através do campo movendo-a com as setas do teclado.<br>
                 Tente capturar as maçãs para aumentar sua pontuação, mas evite colidir com as bordas ou com a
                 própria cauda!</p>
-            <ul>
-                <li><i class="bi bi-arrows-move"></i> Use as setas para mover a cobra</li>
-                <li><i class="bi bi-shift"></i> Shift: Pressione para iniciar ou pausar o jogo</li>
-            </ul>
+            
             <!-- Botões de controle de som -->
             <div class="audio-controls text-center mt-3">
                 <button id="soundOff" class="btn btn-dark"></button>
@@ -147,7 +144,7 @@
         <div id="inicio">
 
         </div>
-        <button id="restart-button" class="btn btn-dark mt-1">Restart</button>
+        
 
         <div id="grid-container" class="mt-2">
             <div id="game-over" class="hidden">
@@ -156,6 +153,13 @@
                 <div id="game-over-hscore"></div>
             </div>
         </div>
+        <div class="instrucoes text-center">
+            <ul>
+                <li><i class="bi bi-shift"></i> Shift: Pressione para iniciar ou pausar o jogo</li>
+                <li><i class="bi bi-arrows-move"></i> Use as setas para mover a cobra</li>
+            </ul>
+        </div>
+        <button id="restart-button" class="btn btn-dark mt-1">Restart</button>
 
         <div class="placar mt-1">
             <div id="score-container">Score: <span id="score">0</span></div>
