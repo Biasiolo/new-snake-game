@@ -198,7 +198,7 @@ $(document).ready(function() {
     });
 
     // Controlar o som do tema
-    $('#soundOff').click(function() {
+    $('#soundOff').text('Música On').click(function() {
         if (themeSound.paused) {
             themeSound.play();
             $('#soundOff').text('Música On');
