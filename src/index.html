@@ -28,7 +28,8 @@
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="New Snake Game">
-    <meta property="og:description" content="New Snake Game - Jogo clássico da cobra está de volta! Jogue agora e supere seu próprio recorde neste jogo nostálgico!">
+    <meta property="og:description"
+        content="New Snake Game - Jogo clássico da cobra está de volta! Jogue agora e supere seu próprio recorde neste jogo nostálgico!">
     <meta property="og:image" content="https://new-snake-game-six.vercel.app/images/openicon.png">
     <meta property="og:url" content="https://new-snake-game-six.vercel.app/">
     <meta property="og:type" content="website">
@@ -36,12 +37,14 @@
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="New Snake Game">
-    <meta name="twitter:description" content="New Snake Game - Jogo clássico da cobra está de volta! Jogue agora e supere seu próprio recorde neste jogo nostálgico!">
+    <meta name="twitter:description"
+        content="New Snake Game - Jogo clássico da cobra está de volta! Jogue agora e supere seu próprio recorde neste jogo nostálgico!">
     <meta name="twitter:image" content="https://new-snake-game-six.vercel.app/images/openicon.png">
 
     <!-- Schema.org Markup for Google+ -->
     <meta itemprop="name" content="New Snake Game">
-    <meta itemprop="description" content="New Snake Game - Jogo clássico da cobra está de volta! Jogue agora e supere seu próprio recorde neste jogo nostálgico!">
+    <meta itemprop="description"
+        content="New Snake Game - Jogo clássico da cobra está de volta! Jogue agora e supere seu próprio recorde neste jogo nostálgico!">
     <meta itemprop="image" content="https://new-snake-game-six.vercel.app/images/openicon.png">
 
     <!-- Fonts -->
@@ -62,6 +65,12 @@
 
     <!-- Robots.txt -->
     <meta name="robots" content="index, follow">
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <title>New Snake Game - Jogue Agora</title>
 </head>
@@ -125,6 +134,15 @@
                 <li><i class="bi bi-arrows-move"></i> Use as setas para mover a cobra</li>
                 <li><i class="bi bi-shift"></i> Shift: Pressione para iniciar ou pausar o jogo</li>
             </ul>
+            <!-- Botões de controle de som -->
+            <div class="audio-controls text-center mt-3">
+                <button id="soundOff" class="btn btn-dark">Música On</button>
+                <audio id="over" src="./sounds/414209__jacksonacademyashmore__death.wav"></audio>
+                <audio id="apple" src="./sounds/523623__bogenseeberg__hey-burp-4.wav"></audio>
+                <audio id="hscore" src="./sounds/535449__tetoszka__ukulele-simple-sound.wav"></audio>
+                <audio id="theme" src="./sounds/513427__mrthenoronha__cartoon-game-theme-loop-3.wav"></audio>
+            </div>
+
         </div>
         <div id="inicio">
 
@@ -139,14 +157,12 @@
             </div>
         </div>
 
-
         <div class="placar mt-1">
             <div id="score-container">Score: <span id="score">0</span></div>
             <div id="highscore-container">High Score: <span id="highscore">0</span></div>
         </div>
-
-
     </main>
+
     <div class="container2 d-flex justify-content-center mt-2">
         <a href="https://beta.publishers.adsterra.com/referral/wjfZeQkHAw" target="_blank"><img
                 class="mb-1 img-fluid rounded" alt="banner"
@@ -193,15 +209,16 @@
                 <div class="col-md-6">
                     <h2 class="titulo">Veja Também: Karaoke Search</h2>
                     <div class="ad-content">
-                        <p>Confira o melhor site de busca para karaokê, o Karaoke Search! Com resultados otimizados e uma
+                        <p>Confira o melhor site de busca para karaokê, o Karaoke Search! Com resultados otimizados e
+                            uma
                             interface fácil de usar, você pode cantar suas músicas favoritas quando quiser.</p>
                         <a href="https://karaoke-search-six.vercel.app/" class="btn btn-danger mb-3"
                             target="_blank">Acesse</a>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <a href="https://karaoke-search-six.vercel.app/" target="_blank"><img src="./images/header-response.jpg"
-                            class="img-fluid rounded" alt="Best Karaoke"></a>
+                    <a href="https://karaoke-search-six.vercel.app/" target="_blank"><img
+                            src="./images/header-response.jpg" class="img-fluid rounded" alt="Best Karaoke"></a>
                 </div>
             </div>
         </div>
@@ -251,13 +268,12 @@
         </div>
     </div>
 
+    <audio src="../src/sounds/414209__jacksonacademyashmore__death.wav"></audio>
+    <audio src="../src/sounds/513427__mrthenoronha__cartoon-game-theme-loop-3.wav"></audio>
 
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="./scripts/main.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
