@@ -193,7 +193,6 @@ $(document).ready(function() {
     // Reiniciar o jogo e parar o tema
     $('#restart-button').click(function() {
         restartGame();
-        stopGame();
         stopSound(themeSound); // Para o tema quando o botão de reinício é pressionado
     });
 
