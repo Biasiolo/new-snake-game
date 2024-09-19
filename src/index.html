@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="New Snake Game - Jogo clássico da cobra está de volta! Jogue agora e supere seu próprio recorde neste jogo nostálgico!">
+        content="New Snake Game - The classic snake game is back! Play now and beat your own high score in this nostalgic game!">
     <meta name="keywords"
-        content="snake, jogo, jogo computador, jogo online, monetizar site, ads, publicidade em site, game, game online, cobra, clássico, divertido, jogo da cobra, jogo da cobrinha, jogo do Nokia, Snake game, jogo snake">
+        content="snake, game, computer game, online game, monetize site, ads, website advertising, game, online game, snake, classic, fun, snake game, Nokia game, Snake game, snake game">
     <meta name="author" content="Biasiolo">
 
     <!-- Google Analytics -->
@@ -29,7 +29,7 @@
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="New Snake Game">
     <meta property="og:description"
-        content="New Snake Game - Jogo clássico da cobra está de volta! Jogue agora e supere seu próprio recorde neste jogo nostálgico!">
+        content="New Snake Game - The classic snake game is back! Play now and beat your own high score in this nostalgic game!">
     <meta property="og:image" content="https://new-snake-game-six.vercel.app/images/openicon.png">
     <meta property="og:url" content="https://new-snake-game-six.vercel.app/">
     <meta property="og:type" content="website">
@@ -38,13 +38,13 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="New Snake Game">
     <meta name="twitter:description"
-        content="New Snake Game - Jogo clássico da cobra está de volta! Jogue agora e supere seu próprio recorde neste jogo nostálgico!">
+        content="New Snake Game - The classic snake game is back! Play now and beat your own high score in this nostalgic game!">
     <meta name="twitter:image" content="https://new-snake-game-six.vercel.app/images/openicon.png">
 
     <!-- Schema.org Markup for Google+ -->
     <meta itemprop="name" content="New Snake Game">
     <meta itemprop="description"
-        content="New Snake Game - Jogo clássico da cobra está de volta! Jogue agora e supere seu próprio recorde neste jogo nostálgico!">
+        content="New Snake Game - The classic snake game is back! Play now and beat your own high score in this nostalgic game!">
     <meta itemprop="image" content="https://new-snake-game-six.vercel.app/images/openicon.png">
 
     <!-- Fonts -->
@@ -72,13 +72,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <title>New Snake Game - Jogue Agora</title>
+    <title>New Snake Game - Play Now</title>
 </head>
 
 
 <body>
     <!-- Navbar -->
-
     <nav id="home" class="navbar navbar-expand-lg navbar-light px-5 mx-5">
         <div class="container-fluid">
             <a class="navbar-brand mr-auto" href="#">New Snake Game</a>
@@ -92,10 +91,10 @@
                         <a class="nav-link show active" aria-current="page" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#inicio">Jogar</a>
+                        <a class="nav-link" href="#inicio">Play</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#footer1">Contato</a>
+                        <a class="nav-link" href="#footer1">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -111,9 +110,9 @@
                     <div class="col-lg-6">
                         <div class="column texto d-flex flex-column justify-content-center align-items-center p-0">
                             <h1 class="titulo m-0">NEW SNAKE GAME</h1>
-                            <p class="lead mb-5 text-center">O jogo clássico está de volta!</p>
-                            <p class="fs-5 text-center">Desafie suas habilidades em busca de um novo recorde</p>
-                            <a href="#inicio" id="start-button" class="btn btn-danger m-0">Jogue Agora!</a>
+                            <p class="lead mb-5 text-center">The classic game is back!</p>
+                            <p class="fs-5 text-center">Challenge your skills in search of a new high score</p>
+                            <a href="#inicio" id="start-button" class="btn btn-danger m-0">Play Now!</a>
                         </div>
                     </div>
                 </div>
@@ -124,14 +123,14 @@
 
     <!-- Game Section -->
     <main class="container">
-        <!-- Instruções do Jogo -->
+        <!-- Game Instructions -->
         <div class="instrucoes text-center">
-            <h2 class="mb-3">INSTRUÇÕES DO JOGO</h2>
-            <p>Guie a cobra através do campo movendo-a com as setas do teclado.<br>
-                Tente capturar as maçãs para aumentar sua pontuação, mas evite colidir com as bordas ou com a
-                própria cauda!</p>
-            
-            <!-- Botões de controle de som -->
+            <h2 class="mb-3">GAME INSTRUCTIONS</h2>
+            <p>Guide the snake through the field by moving it with the keyboard arrows.<br>
+                Try to catch the apples to increase your score, but avoid colliding with the edges or with the
+                snake's own tail!</p>
+
+            <!-- Sound Control Buttons -->
             <div class="audio-controls text-center mt-3">
                 <button id="soundOff" class="btn btn-dark"></button>
                 <audio id="over" src="./sounds/414209__jacksonacademyashmore__death.wav"></audio>
@@ -142,9 +141,8 @@
 
         </div>
         <div id="inicio">
-
         </div>
-        
+
 
         <div id="grid-container" class="mt-2">
             <div id="game-over" class="hidden">
@@ -155,8 +153,8 @@
         </div>
         <div class="instrucoes text-center">
             <ul>
-                <li><i class="bi bi-shift"></i> Shift: Pressione para iniciar ou pausar o jogo</li>
-                <li><i class="bi bi-arrows-move"></i> Use as setas para mover a cobra</li>
+                <li><i class="bi bi-shift"></i> Shift: Press to start or pause the game</li>
+                <li><i class="bi bi-arrows-move"></i> Use the arrows to move the snake</li>
             </ul>
         </div>
         <button id="restart-button" class="btn btn-dark mt-1">Restart</button>
@@ -173,51 +171,16 @@
                 src="https://landings-cdn.adsterratech.com/referralBanners/png/468%20x%2060%20px.png" /></a>
     </div>
 
-
-
-
     <section class="ad m-3">
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-6">
-                    <h2 class="titulo">Confira: TV Online</h2>
+                    <h2 class="titulo">See Also: Karaoke Search</h2>
                     <div class="ad-content">
-                        <p>Assista seus canais favoritos online, de forma fácil, segura e gratuita. Com nossa plataforma
-                            de TV Online ao vivo, você pode acompanhar jogos , filmes, esportes, notícias e muito mais,
-                            tudo sem travamentos.</p>
-                        <a href="https://tv-online.vercel.app/" class="btn btn-danger mb-3" target="_blank">Acesse</a>
-                    </div>
-                </div>
-                <div class="col-md-6 ">
-                    <a href="https://tv-online.vercel.app/" target="_blank"><img src="./images/header1.png"
-                            class="img-fluid rounded" alt="TV Online"></a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7372398616095421"
-        crossorigin="anonymous"></script>
-    <div class="container justify-content-center">
-        <p class="text-light">ADS</p>
-        <!-- teste2 -->
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7372398616095421"
-            data-ad-slot="8451084513" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-    <!-- Ad Section -->
-    <section class="ad m-3">
-        <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-md-6">
-                    <h2 class="titulo">Veja Também: Karaoke Search</h2>
-                    <div class="ad-content">
-                        <p>Confira o melhor site de busca para karaokê, o Karaoke Search! Com resultados otimizados e
-                            uma
-                            interface fácil de usar, você pode cantar suas músicas favoritas quando quiser.</p>
+                        <p>Check out the best karaoke search site, Karaoke Search! With optimized results and an
+                            easy-to-use interface, you can sing your favorite songs whenever you want.</p>
                         <a href="https://karaoke-search-six.vercel.app/" class="btn btn-danger mb-3"
-                            target="_blank">Acesse</a>
+                            target="_blank">Access</a>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -227,6 +190,39 @@
             </div>
         </div>
     </section>
+
+    <section class="ad m-3">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <h2 class="titulo">Check It Out: Online TV</h2>
+                    <div class="ad-content">
+                        <p>Watch your favorite channels online easily, securely, and for free. With our live Online TV
+                            platform,
+                            you can follow games, movies, sports, news, and much more, all without buffering.</p>
+                        <a href="https://tv-online.vercel.app/" class="btn btn-danger mb-3" target="_blank">Access</a>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+                    <a href="https://tv-online.vercel.app/" target="_blank"><img src="./images/header1.png"
+                            class="img-fluid rounded" alt="Online TV"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7372398616095421"
+        crossorigin="anonymous"></script>
+    <div class="container d-flex align-items-center justify-content-center mb-3">
+        <p class="text-light">ADS</p>
+        <!-- teste2 -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7372398616095421"
+            data-ad-slot="8451084513" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    <!-- Ad Section -->
+
     <div class="container justify-content-center">
         <p class="text-light">ADS</p>
         <script async
@@ -255,18 +251,18 @@
     <div class="container mt-3">
         <div class="footer" id="footer1">
             <div class="row">
-                <a href="#home" class="back-to-top text-center">↑ Voltar ao topo ↑</a>
+                <a href="#home" class="back-to-top text-center">↑ Back to top ↑</a>
                 <div class="col-md-12">
 
-                    <h2 class="text-center footer__title">CONTATO</h2>
+                    <h2 class="text-center footer__title">CONTACT</h2>
                     <ul class="footer__social-links">
                         <li>
                             <a href="mailto:bestkaraokeapp@gmail.com" target="_blank">
-                                <img src="./images/mail.svg" alt="logo mail">
+                                <img src="./images/mail.svg" alt="mail logo">
                             </a>
                         </li>
                     </ul>
-                    <p class="footer__copy mb-0">© Biasiolo - 2024 Todos os direitos reservados.</p>
+                    <p class="footer__copy mb-0">© Biasiolo - 2024 All rights reserved.</p>
                 </div>
             </div>
         </div>
@@ -274,9 +270,6 @@
 
     <audio src="../src/sounds/414209__jacksonacademyashmore__death.wav"></audio>
     <audio src="../src/sounds/513427__mrthenoronha__cartoon-game-theme-loop-3.wav"></audio>
-
-
-
 
 </body>
 

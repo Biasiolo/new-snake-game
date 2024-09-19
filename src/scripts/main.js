@@ -197,14 +197,14 @@ $(document).ready(function() {
     });
 
     // Controlar o som do tema
-    $('#soundOff').text('Música On').click(function() {
+    $('#soundOff').text('Music On').click(function() {
         if (themeSound.paused) {
             themeSound.play();
-            $('#soundOff').text('Música On');
+            $('#soundOff').text('Music On');
             isMusicOn = true; // O som está ativado
         } else {
             stopSound(themeSound);
-            $('#soundOff').text('Música Off');
+            $('#soundOff').text('Music Off');
             isMusicOn = false; // O som está desativado
         }
     });
