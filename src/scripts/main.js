@@ -26,7 +26,6 @@ $(document).ready(function() {
         if (!sound.paused) {
             sound.currentTime = 0;
         }
-        sound.play();
     }
 
     // Função para parar o som
