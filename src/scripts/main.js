@@ -26,6 +26,7 @@ $(document).ready(function() {
         if (!sound.paused) {
             sound.currentTime = 0;
         }
+        sound.play();
     }
 
     // Função para parar o som
@@ -84,7 +85,7 @@ $(document).ready(function() {
     function startGame() {
         if (!gameRunning) {
             if (isMusicOn) {
-                themeSound.play(); // Toca o tema se o som estiver ativado
+                stopSound(themeSound); // Para o tema quando o jogo é reiniciado
             }
             interval = setInterval(moveSnake, speed);
             gameRunning = true;
