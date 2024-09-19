@@ -100,6 +100,7 @@ body {
 
     p {
         font-size: 1.2rem;
+        padding: 0 2rem;
     }
 }
 
@@ -293,4 +294,44 @@ body {
             }
         }
     }
+}
+
+.level-up {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+    animation: fadeInOut 3s forwards;
+}
+
+.countdown {
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+    animation: fadeInOut 3s forwards;
+    font-size: 3rem;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
 }

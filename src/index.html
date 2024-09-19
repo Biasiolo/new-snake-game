@@ -127,8 +127,8 @@
         <div class="instrucoes text-center">
             <h2 class="mb-3">GAME INSTRUCTIONS</h2>
             <p>Guide the snake through the field by moving it with the keyboard arrows.<br>
-                Try to catch the apples to increase your score, but avoid colliding with the edges or with the
-                snake's own tail!</p>
+                Try to catch the apples to increase your score and advance through levels speed every 10 apples, challenging yourself.
+                <br>But avoid colliding with the edges or with the snake's own tail!</p>
 
             <!-- Sound Control Buttons -->
             <div class="audio-controls text-center mt-3">
@@ -153,8 +153,9 @@
         </div>
         <div class="instrucoes text-center">
             <ul>
-                <li><i class="bi bi-shift"></i> Shift: Press to start or pause the game</li>
-                <li><i class="bi bi-arrows-move"></i> Use the arrows to move the snake</li>
+                <li><i class="bi bi-shift"></i> SHIFT: Press to start or pause the game</li>
+                <li><i class="bi bi-arrows-move"></i> ARROWS: Use to move the snake</li>
+                <li><i class="bi bi-menu-down"></i> CTRL: Restart the game</li>
             </ul>
         </div>
         <button id="restart-button" class="btn btn-dark mt-1">Restart</button>
@@ -164,6 +165,14 @@
             <div id="highscore-container">High Score: <span id="highscore">0</span></div>
         </div>
     </main>
+    <!-- Level Up Message -->
+<div id="level-up-message" class="level-up hidden">
+    <h2>Congratulations!</h2>
+    <p>Welcome to Level <span id="current-level">1</span>!</p>
+</div>
+<div id="countdown-message" class="countdown hidden">
+    <p>Starting in <span id="countdown-number">3</span>...</p>
+</div>
 
     <div class="container2 d-flex justify-content-center mt-2">
         <a href="https://beta.publishers.adsterra.com/referral/wjfZeQkHAw" target="_blank"><img
@@ -195,17 +204,17 @@
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-6">
-                    <h2 class="titulo">Check It Out: Online TV</h2>
+                    <h2 class="titulo">Check It Out: Movies Online</h2>
                     <div class="ad-content">
-                        <p>Watch your favorite channels online easily, securely, and for free. With our live Online TV
+                        <p>Watch your favorite movies online easily, securely, and for free. With our live movies
                             platform,
-                            you can follow games, movies, sports, news, and much more, all without buffering.</p>
-                        <a href="https://tv-online.vercel.app/" class="btn btn-danger mb-3" target="_blank">Access</a>
+                            you can watch all without buffering.</p>
+                        <a href="https://movies-online-liart.vercel.app/" class="btn btn-danger mb-3" target="_blank">Access</a>
                     </div>
                 </div>
                 <div class="col-md-6 ">
-                    <a href="https://tv-online.vercel.app/" target="_blank"><img src="./images/header1.png"
-                            class="img-fluid rounded" alt="Online TV"></a>
+                    <a href="https://movies-online-liart.vercel.app/" target="_blank"><img src="./images/header1.png"
+                            class="img-fluid rounded" alt="Movies Online"></a>
                 </div>
             </div>
         </div>

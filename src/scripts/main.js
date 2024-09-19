@@ -11,6 +11,10 @@ $(document).ready(function() {
     let highscore = localStorage.getItem('highscore') || 0;
     let isMusicOn = true; // Inicialmente o som está ativado
 
+    // Variáveis para níveis
+    let level = 1; // Nível inicial
+    const applesPerLevel = 10; // Maçãs necessárias para avançar de nível
+
     // Referências aos elementos de áudio
     const overSound = $('#over')[0];
     const appleSound = $('#apple')[0];
@@ -31,6 +35,41 @@ $(document).ready(function() {
         sound.currentTime = 0;
     }
 
+    // Função para exibir mensagem de nível
+    function showLevelUpMessage() {
+        $('#current-level').text(level);
+        $('#level-up-message').removeClass('hidden');
+        // Ocultar a mensagem após 3 segundos e iniciar a contagem regressiva
+        setTimeout(() => {
+            $('#level-up-message').addClass('hidden');
+            startCountdown();
+        }, 1500);
+    }
+
+    // Função para iniciar a contagem regressiva
+    function startCountdown() {
+        let countdown = 3;
+        $('#countdown-number').text(countdown);
+        $('#countdown-message').removeClass('hidden');
+
+        const countdownInterval = setInterval(() => {
+            countdown--;
+            if (countdown > 0) {
+                $('#countdown-number').text(countdown);
+            } else {
+                clearInterval(countdownInterval);
+                $('#countdown-message').addClass('hidden');
+                resumeGame();
+            }
+        }, 1000);
+    }
+
+    // Função para retomar o jogo após a contagem regressiva
+    function resumeGame() {
+        increaseSpeed();
+        startGame();
+    }
+
     // Criar a grade
     function createGrid() {
         for (let i = 0; i < gridSize; i++) {
@@ -45,7 +84,9 @@ $(document).ready(function() {
     // Iniciar o jogo
     function startGame() {
         if (!gameRunning) {
-            stopSound(themeSound); // Para o tema quando o jogo começa
+            if (isMusicOn) {
+                themeSound.play(); // Toca o tema se o som estiver ativado
+            }
             interval = setInterval(moveSnake, speed);
             gameRunning = true;
         }
@@ -55,6 +96,7 @@ $(document).ready(function() {
     function stopGame() {
         clearInterval(interval);
         gameRunning = false;
+        stopSound(themeSound); // Para o tema quando o jogo é pausado
     }
 
     // Reiniciar o jogo
@@ -62,7 +104,8 @@ $(document).ready(function() {
         snake = [{ x: 3, y: 10 }, { x: 2, y: 10 }, { x: 1, y: 10 }];
         direction = 'right';
         food = { x: 5, y: 5 };
-        speed = 150;
+        speed = 110; // Reinicia a velocidade inicial
+        level = 1; // Reinicia o nível
         stopGame();
         if (score > highscore) {
             highscore = score; 
@@ -71,7 +114,9 @@ $(document).ready(function() {
         }
         score = 0; // Zera o score ao reiniciar o jogo
         $('#score-container').text(`Score: ${score}`); 
-        $('#game-over').addClass('hidden'); // Exibe o elemento de "Game Over"
+        $('#highscore-container').text(`High Score: ${highscore}`); // Atualiza o high score no display
+        $('#game-over').addClass('hidden'); // Oculta o elemento de "Game Over"
+        $('#current-level').text(level); // Atualiza o nível no display
         stopSound(themeSound); // Para o tema quando o jogo é reiniciado
         startGame();
     }
@@ -89,6 +134,7 @@ $(document).ready(function() {
         } else if (direction === 'down') {
             newHead = { x: head.x, y: head.y + 1 };
         }
+
         if (checkCollision(newHead)) {
             stopGame();
             if (score > highscore) {
@@ -110,13 +156,20 @@ $(document).ready(function() {
 
             return;
         }
+
         snake.unshift(newHead);
         if (newHead.x === food.x && newHead.y === food.y) {
             generateFood();
-            speed -= 5; 
             score++;
             updateScore();
             playSound(appleSound); // Toca o som ao comer a maçã
+
+            // Verifica se alcançou a quantidade de maçãs para avançar de nível
+            if (score % applesPerLevel === 0) {
+                level++;
+                showLevelUpMessage();
+                stopGame(); // Pausa o jogo ao avançar de nível
+            }
         } else {
             snake.pop();
         }
@@ -167,6 +220,13 @@ $(document).ready(function() {
         }
     }
 
+    // Aumentar a velocidade do jogo
+    function increaseSpeed() {
+        if (speed > 50) { // Define um limite mínimo para a velocidade
+            speed -= 10; // Aumenta a velocidade diminuindo o intervalo
+        }
+    }
+
     // Event listener para teclas
     $(document).keydown(function(event) {
         if (event.key === 'ArrowRight' && direction !== 'left') {
@@ -188,7 +248,13 @@ $(document).ready(function() {
             stopGame();
             event.preventDefault();
         }
+        // Adicionando o controle para reiniciar o jogo com a tecla Ctrl quando em Game Over
+        else if (event.key === 'Control' && $('#game-over').is(':visible')) {
+            restartGame();
+            event.preventDefault();
+        }
     });
+    
 
     // Reiniciar o jogo e parar o tema
     $('#restart-button').click(function() {
